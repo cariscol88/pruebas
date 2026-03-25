@@ -1,53 +1,63 @@
-import { useEffect } from "react";
-import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
+import React, { useState } from 'react';
+import '@/App.css';
+import { ThemeProvider } from './contexts/ThemeContext';
+import { LanguageProvider } from './contexts/LanguageContext';
+import Navigation from './components/Navigation';
+import AboutPage from './components/AboutPage';
+import ProductsPage from './components/ProductsPage';
+import TeamPage from './components/TeamPage';
+import LanguagesPage from './components/LanguagesPage';
+import PricingPage from './components/PricingPage';
+import FAQPage from './components/FAQPage';
+import ContactPage from './components/ContactPage';
+import DemoPage from './components/DemoPage';
+import PortalPage from './components/PortalPage';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+function App() {
+  const [currentPage, setCurrentPage] = useState('about');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
+  const renderPage = () => {
+    switch (currentPage) {
+      case 'about':
+        return <AboutPage />;
+      case 'products':
+        return <ProductsPage />;
+      case 'team':
+        return <TeamPage />;
+      case 'languages':
+        return <LanguagesPage />;
+      case 'pricing':
+        return <PricingPage />;
+      case 'faq':
+        return <FAQPage />;
+      case 'contact':
+        return <ContactPage />;
+      case 'demo':
+        return <DemoPage />;
+      case 'portal':
+        return <PortalPage />;
+      default:
+        return <AboutPage />;
     }
   };
 
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
-
   return (
-    <div>
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
-    </div>
-  );
-};
-
-function App() {
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <ThemeProvider>
+      <LanguageProvider>
+        <div className="App min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+          <Navigation
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+            mobileMenuOpen={mobileMenuOpen}
+            setMobileMenuOpen={setMobileMenuOpen}
+          />
+          <main>
+            {renderPage()}
+          </main>
+        </div>
+      </LanguageProvider>
+    </ThemeProvider>
   );
 }
 
