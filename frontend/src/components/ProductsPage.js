@@ -25,7 +25,7 @@ const ProductsPage = ({ setCurrentPage }) => {
       id: 'voxstream',
       icon: VideoIcon,
       name: 'VoxStream',
-      tagline: 'Coming Soon',
+      tagline: t('Available now', 'Disponibile ora'),
       description: t(
         'Live event broadcasting with built-in multilingual audio. Think Vimeo — with real-time translation for every viewer.',
         'Broadcast di eventi live con audio multilingue integrato. Come Vimeo — con traduzione in tempo reale per ogni spettatore.'
@@ -33,21 +33,21 @@ const ProductsPage = ({ setCurrentPage }) => {
       color: 'from-purple-700 to-purple-900',
       bgColor: 'bg-purple-50 dark:bg-purple-900/20',
       borderColor: 'border-purple-200 dark:border-purple-800',
-      available: false,
+      available: true,
     },
     {
       id: 'voxpulse',
       icon: PulseIcon,
       name: 'VoxPulse',
-      tagline: 'Coming Soon',
+      tagline: t('Available now', 'Disponibile ora'),
       description: t(
-        'Live polls, Q&A, and reactions — all multilingual. Questions in any language, moderated and broadcast in all of them.',
-        'Sondaggi live, Q&A e reazioni — tutto multilingue. Domande in qualsiasi lingua, moderate e trasmesse in tutte.'
+        'Live polls, Q&A, and reactions — all multilingual. With NDI output for seamless integration into your production workflow.',
+        'Sondaggi live, Q&A e reazioni — tutto multilingue. Con output NDI per integrazione perfetta nel tuo flusso di produzione.'
       ),
       color: 'from-green-500 to-emerald-600',
       bgColor: 'bg-green-50 dark:bg-green-900/20',
       borderColor: 'border-green-200 dark:border-green-800',
-      available: false,
+      available: true,
     },
     {
       id: 'voxtranscript',

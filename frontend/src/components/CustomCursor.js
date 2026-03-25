@@ -30,16 +30,6 @@ const CustomCursor = () => {
 
   return (
     <>
-      {/* Main cursor dot */}
-      <div
-        className="fixed w-2 h-2 rounded-full bg-blue-500 pointer-events-none z-[10000] mix-blend-difference transition-transform duration-100"
-        style={{
-          left: `${position.x}px`,
-          top: `${position.y}px`,
-          transform: `translate(-50%, -50%) ${isPointer ? 'scale(1.5)' : 'scale(1)'}`,
-        }}
-      />
-      
       {/* Glow effect - extremely subtle */}
       <div
         className="fixed w-32 h-32 rounded-full pointer-events-none z-[9999] transition-all duration-500 ease-out"

@@ -2,11 +2,11 @@
 
 /* Hide default cursor */
 body {
-  cursor: none;
+  cursor: auto;
 }
 
 button, a, input, select, textarea {
-  cursor: none !important;
+  cursor: pointer !important;
 }
 
 /* Animations */
