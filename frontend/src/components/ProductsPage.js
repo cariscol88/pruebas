@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { MicrophoneIcon, VideoIcon, PulseIcon, DocumentIcon, TeleprompterIcon, ArrowRightIcon } from './Icons';
+import { MicrophoneIcon, VideoIcon, PulseIcon, DocumentIcon, TeleprompterIcon, PresentationIcon, ArrowRightIcon } from './Icons';
 
 const ProductsPage = ({ setCurrentPage }) => {
   const { t } = useLanguage();
@@ -53,7 +53,7 @@ const ProductsPage = ({ setCurrentPage }) => {
       id: 'voxtranscript',
       icon: DocumentIcon,
       name: 'VoxTranscript',
-      tagline: 'Coming Soon',
+      tagline: t('Available now', 'Disponibile ora'),
       description: t(
         'Real-time multilingual transcripts on screen, exported automatically after the event. Every word, perfectly timestamped.',
         'Trascrizioni multilingue in tempo reale sullo schermo, esportate automaticamente dopo l\'evento. Ogni parola, perfettamente timestampata.'
@@ -61,21 +61,35 @@ const ProductsPage = ({ setCurrentPage }) => {
       color: 'from-amber-500 to-orange-600',
       bgColor: 'bg-amber-50 dark:bg-amber-900/20',
       borderColor: 'border-amber-200 dark:border-amber-800',
-      available: false,
+      available: true,
     },
     {
       id: 'voxprompter',
       icon: TeleprompterIcon,
       name: 'VoxPrompter',
-      tagline: 'Coming Soon',
+      tagline: t('Available now', 'Disponibile ora'),
       description: t(
-        'A smart teleprompter that listens and adapts — speed, font, cues — so your speakers always deliver flawlessly.',
-        'Un teleprompter intelligente che ascolta e si adatta — velocità, font, segnali — così i tuoi relatori parlano sempre perfettamente.'
+        'Real-time multilingual captions for deaf and hard-of-hearing attendees. Accessibility compliance made simple.',
+        'Sottotitoli multilingue in tempo reale per partecipanti sordi e ipoacusici. Conformità accessibilità resa semplice.'
       ),
       color: 'from-pink-500 to-rose-600',
       bgColor: 'bg-pink-50 dark:bg-pink-900/20',
       borderColor: 'border-pink-200 dark:border-pink-800',
-      available: false,
+      available: true,
+    },
+    {
+      id: 'voxslide',
+      icon: PresentationIcon,
+      name: 'VoxSlide',
+      tagline: t('Available now', 'Disponibile ora'),
+      description: t(
+        'Simple slide management for events. Speakers email slides, get a code, and present instantly — no USB chaos.',
+        'Gestione semplice slide per eventi. Gli speaker inviano slide via email, ricevono un codice e presentano istantaneamente — nessun caos USB.'
+      ),
+      color: 'from-indigo-600 to-blue-600',
+      bgColor: 'bg-indigo-50 dark:bg-indigo-900/20',
+      borderColor: 'border-indigo-200 dark:border-indigo-800',
+      available: true,
     },
   ];
 
@@ -91,7 +105,7 @@ const ProductsPage = ({ setCurrentPage }) => {
             {t('One ecosystem.', 'Un ecosistema.')}
             <br />
             <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-              {t('Five experiences.', 'Cinque esperienze.')}
+              {t('Six experiences.', 'Sei esperienze.')}
             </span>
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">

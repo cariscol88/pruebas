@@ -43,9 +43,9 @@ const ProductVoxTranscript = () => {
             <DocumentIcon className="w-10 h-10 text-white" />
           </div>
           
-          <div className="inline-block px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 mb-6">
-            <span className="text-sm font-semibold text-gray-600 dark:text-gray-400">
-              Coming Soon
+          <div className="inline-block px-4 py-2 rounded-full bg-green-100 dark:bg-green-900/30 border border-green-200 dark:border-green-800 mb-6">
+            <span className="text-sm font-semibold text-green-700 dark:text-green-400">
+              {t('Available now', 'Disponibile ora')}
             </span>
           </div>
 
@@ -62,10 +62,15 @@ const ProductVoxTranscript = () => {
             )}
           </p>
 
-          <button className="px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white rounded-xl font-semibold text-lg shadow-lg shadow-amber-500/50 transition-all duration-300 hover:shadow-xl hover:scale-105 flex items-center space-x-2 mx-auto">
-            <span>{t('Notify me when available', 'Avvisami quando disponibile')}</span>
-            <ArrowRightIcon className="w-5 h-5" />
-          </button>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button className="group px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white rounded-xl font-semibold text-lg shadow-lg shadow-amber-500/50 transition-all duration-300 hover:shadow-xl hover:scale-105 flex items-center space-x-2">
+              <span>{t('Request a Demo', 'Richiedi una Demo')}</span>
+              <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </button>
+            <button className="px-8 py-4 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-xl font-semibold text-lg hover:border-amber-500 dark:hover:border-amber-500 transition-all duration-300">
+              {t('View Pricing', 'Vedi Prezzi')}
+            </button>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
@@ -83,13 +88,13 @@ const ProductVoxTranscript = () => {
 
         <div className="relative p-12 bg-gradient-to-r from-amber-500 to-orange-600 rounded-3xl text-white text-center">
           <h2 className="text-3xl font-bold mb-4">
-            {t('Never miss a word', 'Non perdere mai una parola')}
+            {t('Ready for perfect transcripts?', 'Pronto per trascrizioni perfette?')}
           </h2>
           <p className="text-xl mb-8 text-amber-100">
-            {t('Get early access to VoxTranscript.', 'Ottieni accesso anticipato a VoxTranscript.')}
+            {t('Get a demo showing real-time transcription in action.', 'Ottieni una demo che mostra la trascrizione in tempo reale in azione.')}
           </p>
           <button className="px-8 py-4 bg-white text-amber-600 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-300">
-            {t('Join Waitlist →', 'Iscriviti alla Waitlist →')}
+            {t('Schedule Demo →', 'Prenota Demo →')}
           </button>
         </div>
       </div>

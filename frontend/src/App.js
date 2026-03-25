@@ -18,6 +18,7 @@ import ProductVoxStream from './components/ProductVoxStream';
 import ProductVoxPulse from './components/ProductVoxPulse';
 import ProductVoxTranscript from './components/ProductVoxTranscript';
 import ProductVoxPrompter from './components/ProductVoxPrompter';
+import ProductVoxSlide from './components/ProductVoxSlide';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('about');
@@ -54,6 +55,8 @@ function App() {
         return <ProductVoxTranscript />;
       case 'product-voxprompter':
         return <ProductVoxPrompter />;
+      case 'product-voxslide':
+        return <ProductVoxSlide />;
       default:
         return <AboutPage />;
     }
