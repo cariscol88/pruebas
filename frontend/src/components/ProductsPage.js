@@ -2,7 +2,7 @@ import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { MicrophoneIcon, VideoIcon, PulseIcon, DocumentIcon, TeleprompterIcon, ArrowRightIcon } from './Icons';
 
-const ProductsPage = () => {
+const ProductsPage = ({ setCurrentPage }) => {
   const { t } = useLanguage();
 
   const products = [
@@ -144,9 +144,14 @@ const ProductsPage = () => {
                         {product.description}
                       </p>
                       <button
+                        onClick={() => {
+                          if (product.available) {
+                            setCurrentPage(`product-${product.id.toLowerCase()}`);
+                          }
+                        }}
                         className={`inline-flex items-center space-x-2 font-semibold ${
                           product.available
-                            ? `text-transparent bg-gradient-to-r ${product.color} bg-clip-text hover:opacity-80`
+                            ? `text-transparent bg-gradient-to-r ${product.color} bg-clip-text hover:opacity-80 cursor-pointer`
                             : 'text-gray-500 dark:text-gray-500 cursor-not-allowed'
                         } transition-all`}
                         disabled={!product.available}
